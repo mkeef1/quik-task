@@ -1,17 +1,17 @@
 {
-  "name": "mean-template",
+  "name": "quick-task",
   "version": "0.0.0",
-  "description": "The MEAN Template",
+  "description": "quick-task",
   "repository": {
     "type": "git",
-    "url": "https://github.com/chyld/mean-template"
+    "url": "https://github.com/mkeef1/quik-task"
   },
-  "author": "Chyld Medford <chyld.medford@gmail.com>",
+  "author": "Matt Keef <mkeef1@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/chyld/mean-template/issues"
+    "url": "https://github.com/mkeef1/quik-task/issues"
   },
-  "homepage": "https://github.com/chyld/mean-template",
+  "homepage": "https://github.com/mkeef1/quik-task",
   "dependencies": {
     "async": "^0.9.0",
     "bcrypt": "^0.8.0",

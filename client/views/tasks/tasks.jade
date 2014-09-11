@@ -1,0 +1,39 @@
+.row
+  .col-xs-3
+    form(novalidate, name='taskForm', role='form')
+      .form-group
+        label(for='name') Name
+        input.form-control#name(name='name', type='text', ng-model='task.name', ng-minlength='3', required, autofocus)
+      .form-group
+        label(for='due') Due
+        input.form-control#due(name='due', type='date', ng-model='task.due', required)
+      .form-group
+        label(for='taskPriority') Priority
+        select(ng-model='task.priority')
+          option(ng-repeat='p in priorities', value='{{p._id}}') {{p.name}}
+      .form-group
+        button.btn.btn-success(ng-show='taskForm.$valid', ng-click='add()') Add Task
+  .col-xs-9
+.col-xs-3
+  .radio
+    label
+      h3 Sort By:
+      input(name='sort', type='radio', ng-model='sort', value='name')
+      span Ascending
+  .radio
+    label
+      input(name='sort', type='radio', ng-model='sort', value='-name')
+      span Descending
+  table.table.table-hover.table-border
+    thead
+      tr
+        th Name
+        th Due
+        th Priority
+        th(type='checkbox', value='isComplete')
+    tbody
+      tr(ng-repeat='t in tasks | orderBy:sort', ng-style='{"background-color":t.priority.color}')
+        td {{t.name}}
+        td {{t.due}}
+        td {{t.priority}}
+        td: input(type='checkbox', ng-model='t.isComplete')

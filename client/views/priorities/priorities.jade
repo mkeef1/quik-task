@@ -11,14 +11,22 @@
         button.btn.btn-success(ng-show='priorityForm.$valid', ng-click='add()') Add Priority
   .col-xs-9
 
-.row
-  .col-xs-3
-    table.table.table-hover.table-border
-      thead
-        tr
-          th Name
-          th Color
-      tbody
-        tr(ng-repeat='p in priorities | orderBy:"name"', ng-style='{"background-color":p.color}')
-          td {{p.name}}
-          td {{p.color}}
+.col-xs-3
+  .radio
+    label
+      h3 Sort By:
+      input(name='sort', type='radio', ng-model='sort', value='name')
+      span Ascending
+  .radio
+    label
+      input(name='sort', type='radio', ng-model='sort', value='-name')
+      span Descending
+  table.table.table-hover.table-border
+    thead
+      tr
+        th Name
+        th Color
+    tbody
+      tr(ng-repeat='p in priorities | orderBy:sort', ng-style='{"background-color":p.color}')
+        td {{p.name}}
+        td {{p.color}}

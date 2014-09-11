@@ -3,6 +3,7 @@
 
   angular.module('quiktask')
   .controller('PrioritiesCtrl', ['$scope', 'Priority', function($scope, Priority){
+    $scope.sort = 'name';
     $scope.priority = {};
     $scope.priorities = [];
 
